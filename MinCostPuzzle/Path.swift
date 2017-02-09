@@ -57,7 +57,7 @@ class Path : Comparable {
     //Path comparison for least cost
     static func <(lhs:Path, rhs: Path) -> Bool {
         if (lhs.route.count != rhs.route.count){
-            return lhs.route.count < rhs.route.count
+            return lhs.route.count > rhs.route.count
         }
         return lhs.cost<rhs.cost
     }

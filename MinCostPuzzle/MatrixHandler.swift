@@ -25,6 +25,7 @@ class MatrixHandler{
     func getlowestCostPathForMatrix() -> Path {
         var allPaths = [Path]()
         for row in 0..<costMatrix.numberOfRows {
+            //Get lowest Path for the specific Row
             let lowestPath =  getLowestCostPath(for: row)
             allPaths.append(lowestPath)
         }
@@ -58,6 +59,7 @@ class MatrixHandler{
             return
         }
         var upRow = row - 1
+        //check diagonal movement value
         if (row == 0){
             upRow = costMatrix.numberOfRows-1
         }
@@ -93,7 +95,7 @@ class MatrixHandler{
         //First check if it is END of the path before going for nextColumn cost calculation
         if (path.traveseredTillEnd){
             return false;
-        }
+        }       
         
         let nextColumn = path.route.count;
         let nextPathCost = path.cost + (costMatrix.costValues![row][nextColumn])

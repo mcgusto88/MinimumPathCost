@@ -37,6 +37,7 @@ class MatrixTests: XCTestCase {
     }
     
     func testForColumnCounttThroughMatrixUtilities() {
+        //Gets the column count
         let input = "1 20 3 4 5\n1 2 3 4 5\n2 3 4 1 4\n1 2 3 8 90"
         let validationResult = MatrixUtilities.parse(inputString: input, delimitedBy: ("\n"," "))
         let matrix = Matrix(inputCostValues: validationResult.costMatrix!)
@@ -47,7 +48,7 @@ class MatrixTests: XCTestCase {
         let input = "1 20 3 4 5\n1 2 3 4 5\n2 3 4 1 4\n1 2 3 8 90"
         let validationResult = MatrixUtilities.parse(inputString: input, delimitedBy: ("\n"," "))
         let matrix = Matrix(inputCostValues: validationResult.costMatrix!)
-        XCTAssert(matrix.numberOfColumns == 4)
+        XCTAssert(matrix.numberOfColumns == 5)
     }
 
     
